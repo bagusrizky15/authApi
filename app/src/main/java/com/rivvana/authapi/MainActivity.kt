@@ -1,7 +1,11 @@
 package com.rivvana.authapi
 
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.rivvana.authapi.databinding.ActivityMainBinding
 
@@ -55,8 +59,14 @@ class MainActivity : AppCompatActivity() {
     fun doLogin() {
         val email = binding.txtInputEmail.text.toString()
         val pwd = binding.txtPass.text.toString()
-        viewModel.loginUser(email = email, pwd = pwd)
 
+        if (email.isEmpty()){
+
+        }
+
+        viewModel.loginUser(email = email, pwd = pwd)
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
 

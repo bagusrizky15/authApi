@@ -16,7 +16,6 @@ object ApiClient {
 
     var mRetrofit: Retrofit? = null
 
-
     val client: Retrofit?
         get() {
             if(mRetrofit == null){
